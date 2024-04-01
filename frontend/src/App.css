@@ -1,0 +1,104 @@
+@import "open-props/style";
+
+/* optional imports that use the props */
+@import "open-props/normalize";
+@import "open-props/buttons";
+
+/* just light or dark themes */
+@import "open-props/normalize/dark";
+@import "open-props/buttons/dark";
+@import "open-props/normalize/light";
+@import "open-props/buttons/light";
+
+/* individual imports */
+@import "open-props/indigo";
+@import "open-props/easings";
+@import "open-props/animations";
+@import "open-props/sizes";
+@import "open-props/gradients";
+@import "open-props/masks/edges";
+@import "open-props/src/props.masks.edges.css";
+@import "open-props/masks.edges.min.css";
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+body {
+  background-image: var(--gradient-5);
+
+  @media (--OSdark) {
+    background-image: var(--gradient-15);
+  }
+}
+
+.colored {
+  background-image: var(--gradient-26);
+
+  @media (--OSdark) {
+    background-image: var(--gradient-15);
+  }
+}
+.noise-noise-noise {
+  /* stack grain with a gradient */
+  background-image: var(--gradient-3), var(--noise-3);
+  /* force colors and noise to collide */
+  filter: var(--noise-filter-3);
+  /* fit noise image to element */
+  background-size: cover;
+}
+
+.maskUsage {
+  -webkit-mask: var(--mask-edge-drip-bottom);
+  mask: var(--mask-edge-drip-bottom);
+}
+.blob {
+  border-radius: var(--radius-blob-1);
+  border: var(--border-size-1) solid var(--gray-1);
+}
+.horizontalMask {
+  -webkit-mask: var(--mask-edge-drip-horizontal);
+  mask: var(--mask-edge-drip-horizontal);
+}
+.colored {
+  background-image: linear-gradient(
+    to bottom,
+    #5050d5,
+    #92bafa,
+    #c1fcff,
+    #f8e2f4,
+    #ffffff
+  );
+}
+
+.colored1 {
+  background-image: linear-gradient(
+    to right top,
+    #d16ba5,
+    #c777b9,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #8aa7ec,
+    #79b3f4,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );
+  .pink-grad {
+    background-image: var(--gradient-18);
+
+    @media (--OSdark) {
+      background-image: var(--gradient-15);
+    }
+  }
+}
