@@ -9,19 +9,24 @@ OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 api_key = OPENAI_API_KEY
 client = OpenAI()
 
- 
 
+
+
+
+ 
 response = client.chat.completions.create(
   model="gpt-4-vision-preview",
+
   messages=[
+         
     {
       "role": "user",
       "content": [
-        {"type": "text", "text": "What’s in this image?"},
+        {'type': 'text', 'text': 'What type of "bacteria" is this? It was grown on a "TSA" plate. The environment sampled was "surface". Here is a description of the colony: "description". Provide a list of your guesses'},
         {
-          "type": "image_url",
-          "image_url": {
-            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg",
+          'type': 'image_url',
+          'image_url': {
+            'url': 'https://i.imgur.com/Oi5HVPd.jpg',
           },
         },
       ],
